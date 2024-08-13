@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float.html</title>
+  <style>
+    img {
+      width: 150px;
+      height: 150px;
+
+      float: left;
+    }
+
+    .left {
+      /* float 에서 left 속성값이 제일 중요 */
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: aliceblue;
+    }
+
+    .right {
+      float: right;
+      background-color: orange;
+    }
+
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- 이미지 밑에 p 태그를 사용해서 img 태그가 문단 차지하는 것처럼 보임 -->
+  <img src="../../images/dog01.jpg" alt="강아지" />
+  <p>롯데는 28일 창원 NC파크에서 열린 NC 다이노스와의 주말시리즈 3차전에서 연장 10회, 274분 혈투 끝에 10대6으로 힘겨운 승리를 따냈다. 그 중심에 결승타 포함 4안타 3타점을 몰아친 나승엽의 원맨쇼가 있었다. 나승엽은 이날 포함 이번 주말 3연전에서 홈런 2방 포함 11타수 7안타 7타점의 맹타를 휘두르며 팀 승리의 선봉장이 됐다. </p>
+
+  <hr />
+  <div class="left">왼쪽에 뜨는 요소</div>
+  <div class="right">오른쪽에 뜨는 요소</div>
+  <div class="clear">Float 해제</div>
+</body>
+</html>

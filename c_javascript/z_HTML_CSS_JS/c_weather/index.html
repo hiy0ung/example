@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App Project</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="weather-container">
+    
+    <!-- # 오른쪽 검색 & 정보 페이지 -->
+    <div id="rightBox">
+      <!-- ! 검색 박스 -->
+      <div class="search-box">
+        <div>search</div>
+        <span>🔍</span>
+      </div>
+      <!-- ! 날짜 정보 박스 -->
+      <div id="weatherBox">
+        <div id="weatherDetails">Weather Details</div>
+        <ul>
+          <li>Max/Min Temp</li>
+        </ul>
+        <ul>
+          <li>Humidity</li>
+        </ul>
+        <ul>
+          <li>Wind</li>
+        </ul>
+        <ul>
+          <li>Cloudy</li>
+        </ul>
+        </div> 
+    </div>
+    <!-- # 온도, 지역 표시 -->
+    <div id="leftBox">
+      <h3 id="nowDate">
+        현재 시간
+      </h3>
+      <div id="nowWeather">
+        <h1>온도</h1>
+        <h2>지역</h2>
+        <span>🌥</span>
+      </div>
+    </div>
+
+  </div> <!-- 전체 닫는 태그 -->
+  <script src="./main.js"></script>
+</body>
+</html>
