@@ -82,9 +82,9 @@ const input = document.querySelector('.search');
 button.addEventListener('click', () => {
   if(button.classList.contains('dark')) {
     button.textContent = 'Light';
-    button.style.backgroundColor = 'black';
-    button.style.color = 'white';
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    button.style.backgroundColor = 'white';
+    button.style.color = 'black';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
     container.style.color = 'white';
     input.style.color = 'white';
 
@@ -93,7 +93,6 @@ button.addEventListener('click', () => {
   } else {
     button.textContent = 'Dark';
     overlay.style.backgroundColor = 'rgba(0,0,0,0)';
-    darkBtn.classList.add('dark');
     button.style = 'none';
     container.style = 'none';
     input.style = 'none';
