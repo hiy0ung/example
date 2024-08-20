@@ -87,7 +87,7 @@
   : 새로운 Node.js 프로젝트를 시작
     >> 기본값으로 package.json 파일을 생성
   : -y 옵션 추가
-    >> 질문없이 기본값으로 package.json 파일을 생성  
+    >> 질문없이 기본값으로 package.json 파일을 생성
     
     package name: 프로젝트의 이름을 입력/ 기본값은 현재 디렉터리의 이름
     version: 패키지의 시작 버전을 입력/ 기본값은 1.0.0
@@ -101,7 +101,7 @@
 
 2. npm install
     : package.json 파일에 명시된 모든 "의존성"을 설치
-    : 특정 패키지 설치 방법 
+    : 특정 패키지 설치 방법
       npm install 패키지명
     : -D | --save-dev 옵션 추가
       개발 의존성으로 패키지를 설치
