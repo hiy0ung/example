@@ -27,11 +27,11 @@ type Task<T> = {
 // : T 제네릭 타입의 할 일 목록을 관리
 class TaskManager<T> {
   // 1. 속성
-  // 멤버 변수 지정: private 설정
+  // 멤버 변수 지정
   // - 할 일 목록을 저장할 배열
-  private tasks: Task<T>[];
+  tasks: Task<T>[];
   // - 다음 할 일에 할당할 고유 ID: 할 일을 추가할 때마다 1씩 증가
-  private nextId: number;
+  nextId: number;
 
   // 생성자
   // 초기 할 일 목록은 비어 있음
@@ -121,6 +121,9 @@ class TaskManager<T> {
       li.appendChild(deleteButton);
       
       // 체크박스를 목록 항목의 맨 앞에 추가
+      // A요소.insertBefore(B요소, A요소.firstChild)
+      // : A요소 안에 B요소를 "삽입"
+      // >> A요소의 맨 앞의 요소보다 "전에"
       li.insertBefore(checkbox, li.firstChild);
       
       // 완성된 목록 항목을 컨테이너(HTML의 ul태그)에 추가

@@ -65,6 +65,7 @@ h1 {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3 ease;
+  margin-bottom: 10px;
 }
 
 #add-button:hover {
@@ -75,6 +76,7 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 10px;
 }
 
 /* 동적으로 생성될 각 할 일 항목 스타일 */
@@ -96,4 +98,30 @@ h1 {
   background-color: #cce0ff;
 }
 
+/* 체크박스 스타일 */
+/* 선택자[속성명='속성값'] */
+#task-list input[type='checkbox'] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* 삭제 버튼 스타일 */
+#task-list button {
+  background-color: red;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+}
+
+#task-list button:hover {
+  background-color: #e60000;
+}
+
+/* #task-list li.completed {
+  text-decoration: line-through;
+  color: #666;
+  background-color: #d3e0ea;
+} */
 
