@@ -72,7 +72,7 @@ function fetchPhotos(page) {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     photos = _a.sent();
-                    // splice(시작인덱스, 끝 인덱스)
+                    // slice(시작인덱스, 끝 인덱스)
                     // : 배열 메서드, 특정 부분을 새로운 배열로 반환
                     // 시작인덱스 <= x < 끝인덱스
                     // (page - 1) * photoPerPage, page * photoPerPage
@@ -83,7 +83,7 @@ function fetchPhotos(page) {
                     //    : 현재 페이지의 첫 번째 사진이 배열에서 몇 번째 위치하는지 계산
                     // 0 * 4, 1 * 4 >> 0 ~ 3까지 가져옴 (4는 포함 X) // 배열이니까 인덱스 번호
                     // 1 * 4, 2 * 4 >> 4 ~ 7까지 가져옴 (8은 포함 X)
-                    return [2 /*return*/, photos.splice((page - 1) * photoPerPage, 1 * photoPerPage)];
+                    return [2 /*return*/, photos.slice((page - 1) * photoPerPage, page * photoPerPage)];
                 case 3:
                     error_1 = _a.sent();
                     console.error('Failed');
