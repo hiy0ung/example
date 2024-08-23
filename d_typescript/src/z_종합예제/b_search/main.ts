@@ -42,6 +42,11 @@
     <p><strong>Username:</strong> ${user.username}</p>
     <p><strong>Email:</strong> ${user.email}</p>
   `;
+    // userCard.innerHTML = ...과 같은 값 (태그마다 밑 구조 만들어줘야함)
+    // const titleH2 = document.createElement('h2');
+    // titleH2.textContent = `${user.name}`;
+    // userCard.appendChild(titleH2);
+    
     return userCard;
   };
 
@@ -64,7 +69,9 @@
   const filterUsers = (users: Users, query: string): Users => {
     return users.filter(
       (user) =>
-        // 사용자의 이름, 사용자명, 이메일 중 하나라도 쿼리 문자열을 포함하면 해당 사용자를 반환합니다.
+      // 사용자의 이름, 사용자명, 이메일 중 하나라도 쿼리 문자열을 포함하면 해당 사용자를 반환합니다.
+
+      // 순회되고 있는 데이터.포함되어있는지 확인(매개변수로 받아오는 데이터값)
         user.name.toLowerCase().includes(query.toLowerCase()) ||
         user.username.toLowerCase().includes(query.toLowerCase()) ||
         user.email.toLowerCase().includes(query.toLowerCase())
@@ -72,9 +79,33 @@
   };
 
   // 사용자 정보를 정렬하는 함수입니다.
-  const sortUsers = (users: Users, key: "name" | "email"): Users => {
+  const sortUsers = (users: Users, key: "name" | "email"): Users => { // key에 타입을 "name"과 "email" 문자열 그 자체만 만족해야하는 리터럴 사용
+
     // 지정된 키(name 또는 email)를 기준으로 사용자 정보를 정렬합니다.
+
+    // [...users]
+    // >> 새로운 배열 주소값에 기존의 10명의 사용자 데이터만 복사해서 가져옴
+
+    // 배열.sort()
+    // >> 배열의 요소를 정렬할 때 사용
+    // >> 콜백함수를 인자로 받음 (함수의 인자는 비교할 데이터 2가지가 입력)
+
+    // cf) 현재 a, b 데이터는 객체(User 인터페이스)
+    //      key가 name으로 전달된 경우 a.[name].localeCompare(b[name])
+
+    // 문자열.localeCompare(문자열)
+    // >> 문자열을 비교하는 메서드 (알파벳 순서에 따라 정렬할 때 유용)
+    // >> 반환값(음수: a가 b보다 앞 / 0: a와 b가 동일 / 양수: b가 a보다 앞)
+    // >> 오름차순 정렬
     return [...users].sort((a, b) => a[key].localeCompare(b[key]));
+
+    // cf) 배열명.sort();
+    // >> 문자열 비교에만 흔히 사용
+
+    const numbers = [5, 30, 2, 8];
+    numbers.sort();
+    // 2, 5, 8, 30 (X)
+    // 2, 30, 5, 8 >> 앞자리로만 비교
   };
 
   // 이벤트 리스너를 추가하는 함수입니다.
@@ -91,6 +122,8 @@
     searchInput?.addEventListener("input", () => {
       const query = searchInput.value;
       const filteredUsers = filterUsers(users, query);
+
+      // 검색을 했을 때도 정렬 기능 적용
       const sortKey = sortSelect.value as "name" | "email";
       const sortedUsers = sortUsers(filteredUsers, sortKey);
       displayUsers(sortedUsers);
@@ -100,6 +133,8 @@
     sortSelect?.addEventListener("change", () => {
       const query = searchInput.value;
       const filteredUsers = filterUsers(users, query);
+
+      // 정렬 기준을 변경해도 정렬 기능 적용
       const sortKey = sortSelect.value as "name" | "email";
       const sortedUsers = sortUsers(filteredUsers, sortKey);
       displayUsers(sortedUsers);
@@ -108,6 +143,9 @@
 
   // 초기화 함수로, 사용자 데이터를 가져와 화면에 표시하고 이벤트 리스너를 설정합니다.
   const init = async (): Promise<void> => {
+    // 실질적으로 데이터를 가져오는 함수(JSONPlaceholder에서 데이터를 가져오는)를 호출하는 경우 비동기적인 처리가 기본
+    // a_pagination에서는 loadpage가 위에서 비동기처리 다 해서 받아오지만, 여기서는 직접적으로 비동기가 필요한 데이터를 매개변수로 넣어서 받아와야하기 때문에? async, await 사용해야함
+    // >> a_pagination에서는 displayUsers()가 위의 로직에서 다 정리가 됨
     const users = await fetchUsers();
     displayUsers(users);
     addEventListeners(users);
