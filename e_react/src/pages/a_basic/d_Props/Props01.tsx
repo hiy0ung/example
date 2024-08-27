@@ -1,4 +1,5 @@
 import React from 'react'
+import { Wrapper } from './Props02'
 
 /*
 REACT 문법 체계: JSX
@@ -69,8 +70,10 @@ export default function Props01() {
   return (
     <div>
       {/* props의 경우 객체로 전달! >> 함수에서는 해당 객체가 매개변수에 전달 */}
+      <Wrapper>
       <ChildComponent name='이승아' />
       <ChildComponent name='이도경' />
+      </Wrapper>
 
       {/* 여러 개의 props 전달 */}
       <MultiProps name='이기석' colorProps='pink' />

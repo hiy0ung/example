@@ -45,7 +45,26 @@ const UserCard = ({ user }: UserCardProps) => {
       <p>Email: {user.email}</p>
     </div>
   )
+}
 
+//* 다른 컴포넌트를 감싸는 Wrapper 컴포넌트
+// : props 데이터로 다른 컴포넌트를 전달받음
+// >> children 자식 요소 컴포넌트
+
+type ChildrenType = {
+  // ReactNode: React 내의 HTML 요소들 + 사용자 정의 컴포넌트들의 타입
+  children: React.ReactNode; 
+}
+
+export const Wrapper = ({ children }: ChildrenType) => {
+
+  return (
+    <div style={{ border: '2px solid black', padding: '16px', backgroundColor: 'green'}}>
+      {/* props로 전달받은 React의 HTML 요소들 + 사용자 정의 컴포넌트 (UI) */}
+      {/* UI가 Node요소로써 태그 내에 담길 경우 반드시 열리고 닫히는 태그 사이에 내용으로 첨부 */}
+      {children}
+    </div>
+  )
 }
 
 //# 부모 컴포넌트 (메인으로 내보내기 되는 것)
@@ -57,15 +76,16 @@ function Props02() {
   };
 
   return (
-    <div>
+    <Wrapper> 
       {/* props는 반드시 매개변수명={전달할 데이터} */}
       <UserCard user={userData} />
       <UserCard user={{ name: '이도경', age: 60, email: 'qweqwe123' }} />
       {/* <UserCard name='이승아' age=50 email='qwe123' /> */}
       {/* 객체 사용시 중괄호로 묶어줘야함 */}
-      
-    </div>
+    </Wrapper>
   )
 }
 
 export default Props02;
+
+// npm run start >> e_react 폴더 통합터미널

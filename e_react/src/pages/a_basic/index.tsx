@@ -1,6 +1,8 @@
-import React from 'react'
-import Props01 from './d_Props/Props01'
-import Props02 from './d_Props/Props02'
+import React from "react";
+import Props01 from "./d_Props/Props01";
+import Props02 from "./d_Props/Props02";
+import Rendering01 from "./f_Rendering/Rendering01";
+import Rendering02 from "./f_Rendering/Rendering02";
 
 // import ReactExample from './pages/a_basic/a_React/ReactExample';
 
@@ -18,8 +20,20 @@ import Props02 from './d_Props/Props02'
 export default function index() {
   return (
     <div>
+      <h1
+        style={{
+          backgroundColor: "black",
+          color: "white",
+        }}
+      >
+        리액트 기본 문법
+      </h1>
       <Props01 />
       <Props02 />
+
+      <h2>f_Rendering 리액트의 조건부 랜더링</h2>
+      <Rendering01 />
+      <Rendering02 />
     </div>
-  )
+  );
 }
