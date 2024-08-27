@@ -19,9 +19,10 @@ type ChildType = {
   name: string;
 }
 
-function ChildComponent(props: { name: string }) {
+// function ChildComponent(props: { name: string }) {
+function ChildComponent(props: ChildType) {
 
-  // props.name = '이도경'; - Error (readonly 속성)
+  // props.name = '이도경'; - Error (readonly 속성) 
   return (
     <div>안녕하세요. { props.name }</div>
   )

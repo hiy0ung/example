@@ -11,7 +11,7 @@ function exmple02() {
 
 export { exmple01, exmple02 }; // 기능함수는 이렇게 사용 가능
 
-//# 컴포넌트 함수
+//# 컴포넌트 함수 (대문자)
 function Example01() {
   
 }

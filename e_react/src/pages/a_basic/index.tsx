@@ -7,6 +7,8 @@ import Handler01 from "./g_Handler/Handler01";
 import Handler02, { ChildComponent } from "./g_Handler/Handler02";
 import Handler03 from "./g_Handler/Handler03";
 
+import Example from './b_Component'
+
 // import ReactExample from './pages/a_basic/a_React/ReactExample';
 
 // // 파일명까지 명시

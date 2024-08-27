@@ -1,4 +1,5 @@
 import React from "react";
+import UseState01 from "./a_UseState/UseState01";
 
 function Index() {
   return (
@@ -11,6 +12,8 @@ function Index() {
       >
         리액트의 Hook
       </h1>
+      <h2>리액트 Hooks - useState</h2>
+      <UseState01 />
     </div>
   );
 }
