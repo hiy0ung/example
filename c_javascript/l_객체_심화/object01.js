@@ -46,6 +46,7 @@ console.log(Number.isFinite(minusInfinity)); // false
 
 console.log(Number.isFinite(10)); // true
 
+
 //# 2. String 객체의 기본 메서드
 // : 문자열을 처리하는 메서드를 제공
 
@@ -90,7 +91,7 @@ manyData = manyData.split('\n');
 console.log(manyData);
 
 // 배열을 순회하여 각 문자열 마다 공백을 제거
-manyData - manyData.map(line => line.trim());
+manyData = manyData.map(line => line.trim());
 
 // 배열 내부의 문자열을 ,(쉼표)를 기준으로 나누기
 manyData = manyData.map(line => line.split(','));

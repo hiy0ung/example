@@ -45,13 +45,13 @@ export default function UseState01() {
     // >> 이전의 상태를 직접 참조
     //    ! 주로 현재 값과 관련없는 변화가 이루어질 경우 사용!
     // setCount(count + 1); // 0 + 1
-    // setCount(count + 1); // 0 + 1
+    // setCount(count + 1); // 0 + 1 >> 비동기적으로 진행되기 때문에 이전값이 전달되지 않은 채 진행
     // 두개를 작성해도 1씩 증가
 
     // 2) 함수형 업데이트를 사용
     // >> 이전 상태 값을 기반으로 상태를 업데이트 하는 경우(권장)
     setCount((prevCount) => prevCount + 1); // 0 + 1
-    setCount((prevCount) => prevCount + 1); // 1 + 1
+    setCount((prevCount) => prevCount + 1); // 1 + 1 >>  동기적으로 진행되어 이전값이 업데이트
     setCount((prevCount) => prevCount + 1); // 2 + 1
     // 3씩 증가
   };
