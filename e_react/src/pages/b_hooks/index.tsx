@@ -11,8 +11,11 @@ import UseRef02 from "./b_UseRef/UseRef02";
 import UseRef03 from "./b_UseRef/UseRef03";
 import UseEffect01 from "./c_UseEffect/UseEffect01";
 import UseEffect02 from "./c_UseEffect/UseEffect02";
-import WebCamPractice from "./c_UseEffect/Practice01";
+// import WebCamPractice from "./c_UseEffect/Practice01";
 import TodoAppLocalStorage from "./z_Todo/TodoAppLocalStorage";
+import UseMemo01 from "./d_Use_Memo_Callback/UseMemo01";
+import UseMemo02 from "./d_Use_Memo_Callback/UseMemo02";
+import UseCallback from "./d_Use_Memo_Callback/UseCallback";
 
 // 전체 파일 정렬
 // ctrl + a: 전체 선택
@@ -44,9 +47,14 @@ function Index() {
       <h2>리액트 Hooks - useEffect</h2>
       <UseEffect01 />
       <UseEffect02 />
-      <WebCamPractice />
+      {/* <WebCamPractice /> */}
 
       <TodoAppLocalStorage />
+
+      <h2>리액트 Hooks - useMemo / useCallback</h2>
+      <UseMemo01 />
+      <UseMemo02 />
+      <UseCallback />
     </div>
   );
 }
