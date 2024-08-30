@@ -20,17 +20,23 @@ import UseReducer01 from "./e_UseReducer/UseReducer01";
 import UseReducer02 from "./e_UseReducer/UseReducer02";
 import Custom01 from "./f_UseCustomHook/Custom01";
 import Custom02 from "./f_UseCustomHook/Custom02";
+import { useLocation } from "react-router-dom";
 
 // 전체 파일 정렬
 // ctrl + a: 전체 선택
 // ctrl + k + f: 포맷터 사용
 function Index() {
+  const location = useLocation();
+  const { username } = location.state || {};
+
   return (
     <div>
       <h1 style={{ backgroundColor: "black", color: "white" }}>
         리액트 Hooks
       </h1>
 
+      {username}
+      
       <h2>리액트 Hooks - 커스텀 훅</h2>
       <Custom01 />
       <Custom02 />
