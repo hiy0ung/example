@@ -8,7 +8,9 @@ import NaviBar from './components/NaviBar';
 import Basic from './pages/a_basic';
 import Hooks from './pages/b_hooks';
 import RouterComponent from './pages/c_Router';
-import RouterHook from './pages/d_RounterHook'
+import RouterHook from './pages/d_RounterHook';
+import Axios from './pages/e_Axios';
+import GlobalState from './pages/f_GlobalState';
 
 import Todos01 from './pages/z_todos';
 import Parent from './pages/c_Router/Parent';
@@ -55,7 +57,10 @@ function App() {
         </Route>
         
         <Route path='routerHook' element={<RouterHook />} />
+        <Route path='axios' element={<Axios />} />
+        <Route path='globalState' element={<GlobalState />} />
 
+        {/* 예제 참고용 */}
         <Route path='/todos01' element={<Todos01 />} />
       </Routes>
 
