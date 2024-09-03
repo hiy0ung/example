@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 // >> Promise 기반의 HTTP 클라이언트, 브라우저와 node.js 모두 사용 가능
 
 //? HTTP 통신
-//? HTTP 통신
 // : HTTP(HyperText Transfer Protocol)
 // >> 웹에서 데이터를 교환하는 주요 프로토콜
 // >> 클라이언트(브라우저)와 서버 간의 통신을 위해 사용
@@ -211,11 +210,11 @@ export default function Axios01() {
         Axios Get
       </h3>
       {/*  
-        uses 데이터가 존재할 경우 UI 출력
+        user 데이터가 존재할 경우 UI 출력
           , 그렇지 않을 경우 p태그(데이터를 가져오는 중입니다)
       */}
       {users ? (
-        users.map((user) => (
+        users.map(user => (
           <div key={user.id}>
             <h4>{user.name}</h4>
             <p>{user.email}</p>
@@ -226,7 +225,8 @@ export default function Axios01() {
       ) : (
         <p>데이터를 가져오는 중입니다</p>
       )}
-      {/* 
+
+      {/* null 값을 초기값으로 넣지 않았을때
       {users.map(user => (
         <div>
           <h4>{user.name}</h4>
@@ -234,6 +234,7 @@ export default function Axios01() {
         </div>
       ))} 
        */}
+      
       <h3
         style={{
           backgroundColor: "black",
