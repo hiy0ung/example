@@ -1,5 +1,5 @@
 import React from 'react'
-import UseNavigate01 from './useNavigate.tsx/UseNavigate01'
+import UseNavigate01 from './useNavigate.tsx/useNavigate01'
 
 export default function Index() {
   return (
