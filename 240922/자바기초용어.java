@@ -5,7 +5,7 @@
   default: 같은 패키지 내에서 접근 가능
   private: 해당 클래스 내에서만 접근 가능
 
-  # tatic
+  # static
   static 변수
   - 클래스변수, 정적 변수
   - 클래스명.속성 형태로 사용
